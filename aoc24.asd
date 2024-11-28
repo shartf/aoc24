@@ -6,12 +6,13 @@
     :author "SH"
     :license "MIT"
     :depends-on (:alexandria
-		 :uiop)
+		 :uiop :drakma)
     :components ((:module "src"
 			  :components
 			  (
+               (:file "downloader")
 			   (:file "main" :depends-on ("downloader"))
-			   (:file "downloader"))))
+			  )))
     :description "Advent of Code 24"
     :long-description "Advent of Code 24 in Common Lisp"
     :in-order-to ((test-op (test-op :aoc24/test)))
