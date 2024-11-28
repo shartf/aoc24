@@ -5,3 +5,6 @@
   (:import-from :aoc24/downloads #:get-input))
 (in-package #:aoc24)
 
+(let ((session (u:read-file-line "session.txt")))
+  (setq *session-cookie* session)
+  (format t (get-input 1)))
