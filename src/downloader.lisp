@@ -27,7 +27,7 @@ If file exists, it will do nothing, if not it will download and create it."
 				 :if-does-not-exist :create)
     (format text-to-write input-text)))
 
-(declaim (ftype (function (string)) get-input-from-remote))
+(declaim (ftype (function (string) string) get-input-from-remote))
 (defun get-input-from-remote (day)
   "Gets input from AOC. Returns text."
   (assert *session-cookie* (*session-cookie*) "The *session-cookie* variable is empty. Without it no HTTP call can be made.")
