@@ -27,22 +27,21 @@
 
 ;; PART 1
 
-(defun solve-part-one ()
+;; sort (destructive)ns
+(sort *parsed-input-one* '<)
+(sort *parsed-input-two* '<)
+;;(sort *test-input-one* '<)
+;;(sort *test-input-two* '<)
 
-  ;; sort (destructive)ns
-  (sort *parsed-input-one* '<)
-  (sort *parsed-input-two* '<)
-  ;;(sort *test-input-one* '<)
-  ;;(sort *test-input-two* '<)
+;; find distance
+(defun find-distance (a b)
+  "Finds numberic distance between two numbers."
+  (cond ((< a b) (- b a))
+	((> a b) (- a b))
+	(t 0)))
 
-  ;; find distance
-  (defun find-distance (a b)
-    "Finds numberic distance between two numbers."
-    (cond ((< a b) (- b a))
-	  ((> a b) (- a b))
-	  (t 0)))
-
-  (reduce #'+ (map 'vector (lambda (a b) (find-distance a b)) *parsed-input-one* *parsed-input-two*)))
+(format t "~&~&The answer to first part of day 1 is: ~s"
+	(reduce #'+ (map 'vector (lambda (a b) (find-distance a b)) *parsed-input-one* *parsed-input-two*)))
 ;;3569916
 
 ;; PART 2
@@ -55,6 +54,7 @@
 	  finally
 	     (return (* count num)))))
 
-(reduce #'+ (loop for a across *parsed-input-one*
-		  collect (get-count a *parsed-input-two*)))
+(format t "~&~&The answer to second part of day 1 is: ~s"
+	(reduce #'+ (loop for a across *parsed-input-one*
+			  collect (get-count a *parsed-input-two*))))
 ;;26407426
