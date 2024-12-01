@@ -6,7 +6,9 @@
   :author "SH"
   :license "MIT"
   :depends-on (:alexandria
-	       :uiop :drakma)
+	       :uiop
+	       :drakma
+	       :serapeum)
   :components ((:module "src"
 		:components
 		(
