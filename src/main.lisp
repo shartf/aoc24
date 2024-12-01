@@ -5,5 +5,5 @@
   (:import-from :aoc24/downloads #:download-input))
 (in-package #:aoc24)
 
-
-(download-input "3")
+;; don't know why we need it
+(download-input "1")

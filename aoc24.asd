@@ -1,22 +1,23 @@
 (in-package :asdf)
 
 (asdf:defsystem #:aoc24
-    :long-name "advent-of-code-24-cl"
-    :version "0.0.1"
-    :author "SH"
-    :license "MIT"
-    :depends-on (:alexandria
-		 :uiop :drakma)
-    :components ((:module "src"
-			  :components
-			  (
-               (:file "downloader")
-			   (:file "main" :depends-on ("downloader"))
-			  )))
-    :description "Advent of Code 24"
-    :long-description "Advent of Code 24 in Common Lisp"
-    :in-order-to ((test-op (test-op :aoc24/test)))
-    )
+  :long-name "advent-of-code-24-cl"
+  :version "0.0.1"
+  :author "SH"
+  :license "MIT"
+  :depends-on (:alexandria
+	       :uiop :drakma)
+  :components ((:module "src"
+		:components
+		(
+		 (:file "downloader")
+		 (:file "main" :depends-on ("downloader"))
+		 (:file "day1")		 
+		 )))
+  :description "Advent of Code 24"
+  :long-description "Advent of Code 24 in Common Lisp"
+  :in-order-to ((test-op (test-op :aoc24/test)))
+  )
 
 					; (asdf:defsystem #:cl-dop/test
 					;   :author "SH"
