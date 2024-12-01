@@ -17,3 +17,5 @@
 *.wx32fsl
 *.txt
 session.txt
+session.txt
+src/day1.lisp
