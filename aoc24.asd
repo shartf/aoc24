@@ -15,7 +15,7 @@
 		 (:file "downloader")
 		 (:file "main" :depends-on ("downloader"))
 		 (:file "day1")		 
-     (:file "day2")
+		 (:file "day2")
 		 )))
   :description "Advent of Code 24"
   :long-description "Advent of Code 24 in Common Lisp"

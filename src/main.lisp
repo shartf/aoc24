@@ -7,3 +7,4 @@
 
 ;; don't know why we need it
 (download-input "1")
+(download-input "2")
