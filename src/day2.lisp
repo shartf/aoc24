@@ -68,6 +68,14 @@
 								   (if (and x y) 1 0)) *res-inc-dec* *res-interval*)))
 
 ;; PART 2
+(defun remove-nth-element (lst n)
+  "Remove the element at index N from LST."
+  (append (subseq lst 0 n) (subseq lst (1+ n))))
+
+(defun lists-with-one-removed (lst)
+  "Generate a list of lists where each element from LST is removed once."
+  (loop for i from 0 below (length lst)
+	collect (remove-nth-element lst i)))
 
 ;; generate permutated lists
 (let ((in (open (asdf:system-relative-pathname "aoc24" "input/2.txt")  :if-does-not-exist nil)))
@@ -79,14 +87,6 @@
 	      (push (append (list  parsed-line) (lists-with-one-removed parsed-line)) *part-two-perm*)))
     (close in)))
 
-(defun remove-nth-element (lst n)
-  "Remove the element at index N from LST."
-  (append (subseq lst 0 n) (subseq lst (1+ n))))
-
-(defun lists-with-one-removed (lst)
-  "Generate a list of lists where each element from LST is removed once."
-  (loop for i from 0 below (length lst)
-	collect (remove-nth-element lst i)))
 
 ;; TODO: do not forget to parse to int
 (defun process-report (list-of-reports)
